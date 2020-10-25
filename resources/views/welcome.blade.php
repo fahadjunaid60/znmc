@@ -7,7 +7,7 @@
           <div class="col-lg-6" data-aos="fade-right" data-aos-duration="3000">
             <div class="banner_text">
               <div class="banner_text_iner">
-                <h1>ZNMCTECH Electronics Tradings</h1>
+                <h1>ZNMCTECH Electronics Trading</h1>
                 <h5>provides one stop automated solution for you trade and industry.</h5>
                 <a href="#" class="btn_1">Check Our services</a>
               </div>
