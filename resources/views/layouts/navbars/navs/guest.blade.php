@@ -3,7 +3,7 @@
         <div class="row align-items-center">
             <div class="col-lg-12">
             <nav class="navbar navbar-expand-lg navbar-light">
-                <a class="navbar-brand" href="index.html">
+                <a class="navbar-brand" href="/">
                 <img src="{{asset('front-page')}}/img/large-logo.png" alt="logo" style="width: 250px" />
                 </a>
                 <button
@@ -24,7 +24,7 @@
                 >
                 <ul class="navbar-nav align-items-center">
                     <li class="nav-item">
-                    <a class="nav-link" href="products.html">Products</a>
+                    <a class="nav-link" href="{{route('all-products')}}">Products</a>
                     </li>
                     <li class="nav-item">
                     <a class="nav-link" href="#">About</a>

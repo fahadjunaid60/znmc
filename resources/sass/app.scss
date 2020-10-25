@@ -1,13 +1,20 @@
 // Fonts
-@import url('https://fonts.googleapis.com/css?family=Nunito');
+@import url("https://fonts.googleapis.com/css?family=Nunito");
 
 // Variables
-@import 'variables';
+@import "variables";
 
 // Bootstrap
-@import '~bootstrap/scss/bootstrap';
+@import "~bootstrap/scss/bootstrap";
 
 .btn-black {
     color: white;
     background: $black;
+}
+
+.sidebar[data-color="orange"] li.active > a {
+    background-color: #0de660 !important;
+}
+.form-check .form-check-input:checked + .form-check-sign .check {
+    background: #4ba64f;
 }

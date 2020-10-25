@@ -28,17 +28,31 @@
     <!-- style CSS -->
     <link rel="stylesheet" href="{{asset('front-page')}}/css/style.css" />
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/css/nice-select.css" integrity="sha512-uHuCigcmv3ByTqBQQEwngXWk7E/NaPYP+CFglpkXPnRQbSubJmEENgh+itRDYbWV0fUZmUz7fD/+JDdeQFD5+A==" crossorigin="anonymous" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
     <link
       href="https://cdn.rawgit.com/sachinchoolur/lightgallery.js/master/dist/css/lightgallery.css"
       rel="stylesheet"
     />
+    <style>
+    .flt-prod{
+        border-right: 1px solid rgba(0,0,0,0.1);
+        border-top: 1px solid rgba(0,0,0,0.1);
+        border-bottom: 1px solid rgba(0,0,0,0.1);
+        border-radius: 5px;
+        margin-bottom: 5rem !important;
+        margin-bottom: 5rem !important;
+        height: 70vh;
+      }
+      .menu_fixed {
+        z-index: 999 !important;
+      }
+    </style>
   </head>
     <body class="{{ $class ?? '' }}">
-        @guest()
-            @include('layouts.page_templates.guest')
-        @endguest
+
+        @include('layouts.page_templates.guest')
+
 
         <!--   Core JS Files   -->
          <script src="{{asset('front-page')}}/js/jquery-1.12.1.min.js"></script>
@@ -60,6 +74,7 @@
         <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
         <script>
         lightGallery(document.getElementById("lightgallery"));
+        $('select').niceSelect();
         AOS.init();
         </script>
         @stack('js')

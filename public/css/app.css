@@ -10914,3 +10914,11 @@ a.text-dark:focus {
   background: black;
 }
 
+.sidebar[data-color=orange] li.active > a {
+  background-color: #0de660 !important;
+}
+
+.form-check .form-check-input:checked + .form-check-sign .check {
+  background: #4ba64f;
+}
+

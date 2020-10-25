@@ -13,45 +13,32 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'FrontViewController@index')->name('welcome');
+Route::get('/all-products', 'FrontViewController@allProducts')->name('all-products');
 
-Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
-Auth::routes();
+Auth::Routes(["register"=>false]);
 
-Route::get('/home', 'HomeController@index')->name('home')->middleware('auth');
+Route::get('/category', 'CategoryController@index')->name('home');
+
+Route::get('/category', 'CategoryController@index')->name('home')->middleware('auth');
 
 Route::group(['middleware' => 'auth'], function () {
-	Route::get('table-list', function () {
-		return view('pages.table_list');
-	})->name('table');
+    Route::get('/category', 'CategoryController@index')->name('category');
 
-	Route::get('typography', function () {
-		return view('pages.typography');
-	})->name('typography');
+    Route::get('/products', 'ProductController@index')->name('product');
 
-	Route::get('icons', function () {
-		return view('pages.icons');
-	})->name('icons');
+    Route::get('/create-product', 'ProductController@create')->name('create-product');
+    Route::post('/create-product', 'ProductController@store')->name('create-product');
+    Route::get('/product/edit/{id}', 'ProductController@edit');
+    Route::match(['put', 'patch'],'/product/update/{id}', 'ProductController@update');
+    Route::get('/product/destroy/{id}', 'ProductController@destroy');
 
-	Route::get('map', function () {
-		return view('pages.map');
-	})->name('map');
+    //brand
+    Route::get('/brand', 'BrandController@index')->name('brand');
+    Route::get('/brand/create', 'BrandController@create')->name('create-brand');
+    Route::post('/brand/store', 'BrandController@store')->name('create-brand');
 
-	Route::get('notifications', function () {
-		return view('pages.notifications');
-	})->name('notifications');
-
-	Route::get('rtl-support', function () {
-		return view('pages.language');
-	})->name('language');
-
-	Route::get('upgrade', function () {
-		return view('pages.upgrade');
-	})->name('upgrade');
 });
 
 Route::group(['middleware' => 'auth'], function () {

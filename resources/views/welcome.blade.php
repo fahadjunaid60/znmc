@@ -1,27 +1,15 @@
-@extends('layouts.front-page.app', ['class' => 'off-canvas-sidebar', 'activePage' => 'home', 'title' => __('Material Dashboard')])
+@extends('layouts.front-page.app', ['class' => 'off-canvas-sidebar','titlePage'=>'' , 'activePage' => 'home', 'title' => __('Material Dashboard')])
 @section('content')
  <!-- banner part start-->
     <section class="banner_part">
       <div class="container">
         <div class="row align-items-center">
-          <div class="col-lg-5" data-aos="fade-right" data-aos-duration="3000">
+          <div class="col-lg-6" data-aos="fade-right" data-aos-duration="3000">
             <div class="banner_text">
               <div class="banner_text_iner">
-                <h1>ZNMCTECH Electronics Trading</h1>
+                <h1>ZNMCTECH Electronics Tradings</h1>
                 <h5>provides one stop automated solution for you trade and industry.</h5>
                 <a href="#" class="btn_1">Check Our services</a>
-              </div>
-            </div>
-          </div>
-
-          <div
-            class="col-lg-6 offset-lg-1"
-            data-aos="fade-left"
-            data-aos-duration="3000"
-          >
-            <div class="banner_text" style="margin-top: 150px">
-              <div class="banner_text_iner">
-                <img src="{{asset('front-page')}}/img/intro.png" />
               </div>
             </div>
           </div>
@@ -101,14 +89,29 @@
           </div>
           <div class="col-lg-3 col-md-6">
             <div class="more_btn d-none d-md-block">
-              <a href="products.php" class="more_btn_iner">View All Products</a>
+              <a href="{{route('all-products')}}" class="more_btn_iner">View All Products</a>
             </div>
           </div>
         </div>
         <div class="filters-content">
           <div class="row justify-content-between portfolio-grid">
-
-
+              @foreach($categories as $category)
+            <div class="col-lg-4 col-sm-6 p-3" data-aos="zoom-in" data-aos-duration="2000">
+            <a href="category/{{$category->id}}">
+              <div class="single_our_project">
+                <div class="single_offer">
+                  <img src="{{$category->img}}" alt="offer_img_1">
+                  <div class="hover_text">
+                      <h2>{{$category->name}} <i class="fa fa-align-right" aria-hidden="true"></i>
+                      </h2>
+                    <p class="my-4">
+                    </p>
+                  </div>
+                </div>
+              </div>
+              </a>
+            </div>
+              @endforeach
           </div>
         </div>
       </div>
