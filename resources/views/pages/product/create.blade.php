@@ -19,7 +19,7 @@
             <h4 class="card-title"><strong>{{ __('Store Product') }}</strong></h4>
           </div>
           <div class="card-body ">
-              <label class="mt-4">Select Brand</label>
+            <label class="mt-4">Select Brand</label>
             <div class="bmd-form-group{{ $errors->has('brand') ? ' has-danger' : '' }}">
               <div class="input-group">
                 <div class="input-group-prepend bg-success">

@@ -36,7 +36,6 @@
               </div>
           </div>
       </div>
-
         <div class="col-lg-9">
             <div class="product-title-wrapper">
                 <h2>All Products</h2>
